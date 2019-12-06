@@ -5,6 +5,9 @@
     max_clients: 200
   remote_user: root
   tasks:
+    - name: install apache2
+      apt: name=apache2 update_cache=yes state=latest
+  tasks:
   - name: ensure apache is at the latest version
     yum:
       name: httpd
